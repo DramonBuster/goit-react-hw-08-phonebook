@@ -48,7 +48,7 @@ const ContactListItem = ({ contact, onDeleteContact }) => {
     <ItemWrapper>
       <ContactInfo>
         <ContactName>{contact.name}</ContactName>
-        <ContactNumber>{contact.phone}</ContactNumber>
+        <ContactNumber>{contact.number}</ContactNumber>
       </ContactInfo>
       <DeleteButton onClick={() => onDeleteContact(contact.id)}>
         Delete

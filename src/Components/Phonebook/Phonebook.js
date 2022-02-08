@@ -1,4 +1,5 @@
-import { connect } from 'react-redux';
+import React, { useEffect, Suspense, lazy } from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
 import { getContact } from '../../redux/contacts/contacts-action';
 import styled from 'styled-components';
 import Filter from '../Filter/Filter';
