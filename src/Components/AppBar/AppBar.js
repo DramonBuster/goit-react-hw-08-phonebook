@@ -8,16 +8,16 @@ import styled from 'styled-components';
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding: 10px 0px;
   margin-bottom: 20px;
-  color: rgb(39, 164, 236);
+  color: red;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.475;
-  border-bottom: solid 1px rgb(39, 164, 236);
+  border-bottom: solid 1px red;
 
   &.active {
-    color: rgb(4, 109, 165);
+    color: blue;
   }
 `;
 

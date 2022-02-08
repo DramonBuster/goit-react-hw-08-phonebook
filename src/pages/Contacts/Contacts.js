@@ -4,35 +4,31 @@ import ContactForm from '../../Components/ContactForm/ContactForm';
 import Filter from '../../Components/Filter/Filter';
 import ContactList from '../../Components/ContactList/ContactList';
 import { getContact } from '../../redux/contacts/contacts-action';
-import Typography from '@mui/material/Typography';
+import styled from 'styled-components';
+
+const ContactsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ContactsHeader = styled.h5`
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  color: red;
+`;
 
 export default function Contacts() {
   const dispatch = useDispatch();
   useEffect(() => dispatch(getContact()), [dispatch]);
   return (
-    <div>
-      <Typography
-        sx={{
-          color: '#808090',
-        }}
-        variant="h5"
-        component="div"
-        gutterBottom
-      >
-        Create new contact
-      </Typography>
+    <ContactsWrapper>
+      <ContactsHeader>Create new contact</ContactsHeader>
       <ContactForm />
-      {/* <Typography
-          sx={{         
-            color: '#808090',    
-          }}
-          variant="h4"
-          component="div"
-          gutterBottom>
-          Contacts
-        </Typography> */}
       <Filter />
       <ContactList />
-    </div>
+    </ContactsWrapper>
   );
 }

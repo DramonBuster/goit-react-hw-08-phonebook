@@ -1,36 +1,33 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../../redux/auth/auth-operations';
 import { getUserName } from '../../redux/auth/auth-selectors';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { AccountCircle, Logout } from '@mui/icons-material';
+import { AccountCircle } from '@mui/icons-material';
 import styled from 'styled-components';
 
 export const UserMenuWrapper = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const Name = styled.span`
   margin-right: 20px;
   color: grey;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.375;
 `;
 
 export const LogOutButton = styled.button`
-  padding: 4px 8px;
-  border-radius: 2px;
-  background-color: rgb(4, 109, 165);
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: white;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  /* margin-left: 0px; */
-  /* margin-right: auto; */
-  color: #fff;
-  border: 0;
+  margin: 10px 0px;
+  color: red;
+  border: 1px solid red;
   text-decoration: none;
   cursor: pointer;
   font-family: inherit;
@@ -44,7 +41,8 @@ export const LogOutButton = styled.button`
 
   &:hover,
   focus {
-    background-color: #a5a1a4;
+    color: white;
+    background-color: red;
   }
 `;
 
@@ -58,15 +56,9 @@ export default function UserMenu() {
         <AccountCircle />
       </IconButton>
       <Name startIcon={<AccountCircle />}>Welcome, {name}</Name>
-      <Button
-        variant="outlined"
-        size="small"
-        type="button"
-        onClick={() => dispatch(logOut())}
-        endIcon={<Logout />}
-      >
+      <LogOutButton type="button" onClick={() => dispatch(logOut())}>
         Log out
-      </Button>
+      </LogOutButton>
     </UserMenuWrapper>
   );
 }

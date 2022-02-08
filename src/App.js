@@ -23,9 +23,11 @@ const Contacts = lazy(() =>
 );
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   padding: 0 15px;
-  width: 430px;
+  width: 830px;
 `;
 
 function App() {
