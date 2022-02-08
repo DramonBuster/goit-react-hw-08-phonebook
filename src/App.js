@@ -7,7 +7,6 @@ import AppBar from './Components/AppBar';
 import PrivateRoute from './Components/Routes/PrivateRoute';
 import PublicRoute from './Components/Routes/PublicRoute';
 import styled from 'styled-components';
-// import Phonebook from './Components/Phonebook/Phonebook';
 
 const Home = lazy(() =>
   import('./pages/Home/Home' /*webpackChunkName: "home" */),
@@ -41,7 +40,6 @@ function App() {
   return (
     !isFetchingCurrentUser && (
       <Container>
-        {/* <Phonebook /> */}
         <AppBar />
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
